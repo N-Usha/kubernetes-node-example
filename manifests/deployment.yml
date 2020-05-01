@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: "actionsdemoaks"
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "actionsdemoaks"
+    spec:
+      containers:
+        - name: "actionsdemoaks"
+          image: "actionregistry.azurecr.io/actionsdemoaks"
+          ports:
+          - containerPort: 80
